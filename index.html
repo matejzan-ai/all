@@ -78,7 +78,7 @@
 
     <script>
         const OWNER = 'matejzan-ai';
-        const IGNORE = ['all']; // don't list this page itself
+        const IGNORE = ['all'];
 
         async function load() {
             const container = document.getElementById('sites');
@@ -86,21 +86,13 @@
                 const res = await fetch(`https://api.github.com/users/${OWNER}/repos?per_page=100&sort=updated`);
                 const repos = await res.json();
 
-                const sites = [];
-                for (const repo of repos) {
-                    if (IGNORE.includes(repo.name)) continue;
-                    try {
-                        const pRes = await fetch(`https://api.github.com/repos/${OWNER}/${repo.name}/pages`);
-                        if (pRes.ok) {
-                            const pages = await pRes.json();
-                            sites.push({
-                                name: repo.name.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-                                desc: repo.description || '',
-                                url: pages.html_url
-                            });
-                        }
-                    } catch (e) {}
-                }
+                const sites = repos
+                    .filter(r => r.has_pages && !IGNORE.includes(r.name))
+                    .map(r => ({
+                        name: r.name.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                        desc: r.description || '',
+                        url: `https://${OWNER}.github.io/${r.name}/`
+                    }));
 
                 if (sites.length === 0) {
                     container.innerHTML = '<p class="loading">No sites found.</p>';
