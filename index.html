@@ -110,11 +110,11 @@
 
         const SITES = [
             { name: 'Drzanlabs', desc: 'IT Support & AI Automation', repo: 'drzanlabs' },
-            { name: 'Rambala Stolarstvo', desc: 'Premium woodworking business website', repo: 'rambala-stolarstvo' }
+            { name: 'Rambala Stolarstvo', desc: 'Premium woodworking business website', repo: 'rambala-stolarstvo' },
+            { name: 'Remote Factory', desc: 'Engineering resources from Slovakia', repo: 'remote-factory' }
         ];
 
         function getScreenshotUrl(siteUrl) {
-            // Using screenshotapi.net free tier (no key required for basic usage)
             const encoded = encodeURIComponent(siteUrl);
             return `https://screenshot.screenshotapi.net/screenshot?url=${encoded}&width=1280&height=800&format=png`;
         }
