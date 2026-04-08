@@ -26,17 +26,17 @@
             font-size: 0.9rem;
         }
         #sites {
-            max-width: 700px;
+            max-width: 900px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
         }
         .site {
             background: #151515;
             border: 1px solid #222;
             border-radius: 12px;
-            padding: 1.5rem;
+            overflow: hidden;
             text-decoration: none;
             color: inherit;
             transition: border-color 0.2s, transform 0.2s;
@@ -45,29 +45,51 @@
             border-color: #444;
             transform: translateY(-2px);
         }
+        .preview {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+            background: #111;
+        }
+        .preview iframe {
+            width: 1280px;
+            height: 800px;
+            border: none;
+            transform: scale(0.3);
+            transform-origin: top left;
+            pointer-events: none;
+        }
+        .info {
+            padding: 1rem 1.2rem;
+        }
         .site-name {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: #fff;
             margin-bottom: 0.3rem;
         }
         .site-desc {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #888;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
         .site-url {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #4a9eff;
         }
         .loading {
             text-align: center;
             color: #555;
             padding: 2rem;
+            grid-column: 1 / -1;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 500px) {
             body { padding: 2rem 1rem; }
             h1 { font-size: 1.5rem; }
+            #sites { grid-template-columns: 1fr; }
+            .preview iframe { transform: scale(0.25); }
+            .preview { height: 200px; }
         }
     </style>
 </head>
@@ -101,9 +123,14 @@
 
                 container.innerHTML = sites.map(s => `
                     <a href="${s.url}" class="site" target="_blank">
-                        <div class="site-name">${s.name}</div>
-                        ${s.desc ? `<div class="site-desc">${s.desc}</div>` : ''}
-                        <div class="site-url">${s.url}</div>
+                        <div class="preview">
+                            <iframe src="${s.url}" loading="lazy" sandbox="allow-scripts allow-same-origin" tabindex="-1"></iframe>
+                        </div>
+                        <div class="info">
+                            <div class="site-name">${s.name}</div>
+                            ${s.desc ? `<div class="site-desc">${s.desc}</div>` : ''}
+                            <div class="site-url">${s.url}</div>
+                        </div>
                     </a>
                 `).join('');
             } catch (e) {
