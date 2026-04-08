@@ -11,26 +11,28 @@
             background: #0a0a0a;
             color: #e0e0e0;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 3rem 1.5rem;
         }
         h1 {
-            text-align: center;
             font-size: 2rem;
             margin-bottom: 0.5rem;
             color: #fff;
         }
         .subtitle {
-            text-align: center;
             color: #666;
             margin-bottom: 3rem;
             font-size: 0.9rem;
         }
         #sites {
-            max-width: 900px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 1.5rem;
+            justify-items: center;
         }
         .site {
             background: #151515;
@@ -40,6 +42,8 @@
             text-decoration: none;
             color: inherit;
             transition: border-color 0.2s, transform 0.2s;
+            width: 100%;
+            max-width: 450px;
         }
         .site:hover {
             border-color: #444;
@@ -77,12 +81,12 @@
         .site-url {
             font-size: 0.78rem;
             color: #4a9eff;
+            word-break: break-all;
         }
         .loading {
             text-align: center;
             color: #555;
             padding: 2rem;
-            grid-column: 1 / -1;
         }
         @media (max-width: 500px) {
             body { padding: 2rem 1rem; }
