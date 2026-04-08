@@ -44,44 +44,46 @@
             transition: border-color 0.2s, transform 0.2s;
             width: 100%;
             max-width: 450px;
+            display: flex;
+            flex-direction: column;
         }
         .site:hover {
             border-color: #444;
             transform: translateY(-2px);
         }
-        .preview {
+        .thumbnail {
             width: 100%;
             height: 240px;
-            overflow: hidden;
-            position: relative;
-            background: #111;
-        }
-        .preview iframe {
-            width: 1280px;
-            height: 800px;
-            border: none;
-            transform: scale(0.3);
-            transform-origin: top left;
-            pointer-events: none;
+            background: linear-gradient(135deg, #222 0%, #111 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            opacity: 0.5;
         }
         .info {
-            padding: 1rem 1.2rem;
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         .site-name {
             font-size: 1.1rem;
             font-weight: 600;
             color: #fff;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.4rem;
         }
         .site-desc {
             font-size: 0.82rem;
             color: #888;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.6rem;
+            flex: 1;
         }
         .site-url {
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             color: #4a9eff;
             word-break: break-all;
+            display: inline-block;
         }
         .loading {
             text-align: center;
@@ -92,8 +94,6 @@
             body { padding: 2rem 1rem; }
             h1 { font-size: 1.5rem; }
             #sites { grid-template-columns: 1fr; }
-            .preview iframe { transform: scale(0.25); }
-            .preview { height: 200px; }
         }
     </style>
 </head>
@@ -117,7 +117,8 @@
                     .map(r => ({
                         name: r.name.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
                         desc: r.description || '',
-                        url: `https://${OWNER}.github.io/${r.name}/`
+                        url: `https://${OWNER}.github.io/${r.name}/`,
+                        icon: '🌐'
                     }));
 
                 if (sites.length === 0) {
@@ -127,9 +128,7 @@
 
                 container.innerHTML = sites.map(s => `
                     <a href="${s.url}" class="site" target="_blank">
-                        <div class="preview">
-                            <iframe src="${s.url}" loading="lazy" sandbox="allow-scripts allow-same-origin" tabindex="-1"></iframe>
-                        </div>
+                        <div class="thumbnail">${s.icon}</div>
                         <div class="info">
                             <div class="site-name">${s.name}</div>
                             ${s.desc ? `<div class="site-desc">${s.desc}</div>` : ''}
