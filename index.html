@@ -104,41 +104,32 @@
 
     <script>
         const OWNER = 'matejzan-ai';
-        const IGNORE = ['all'];
+
+        const SITES = [
+            { name: 'Drzanlabs', desc: 'IT Support & AI Automation', repo: 'drzanlabs' },
+            { name: 'Rambala Stolarstvo', desc: 'Premium woodworking business website', repo: 'rambala-stolarstvo' }
+        ];
 
         async function load() {
             const container = document.getElementById('sites');
-            try {
-                const res = await fetch(`https://api.github.com/users/${OWNER}/repos?per_page=100&sort=updated`);
-                const repos = await res.json();
 
-                const sites = repos
-                    .filter(r => r.has_pages && !IGNORE.includes(r.name))
-                    .map(r => ({
-                        name: r.name.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-                        desc: r.description || '',
-                        url: `https://${OWNER}.github.io/${r.name}/`,
-                        icon: '🌐'
-                    }));
+            const sites = SITES.map(s => ({
+                name: s.name,
+                desc: s.desc,
+                url: `https://${OWNER}.github.io/${s.repo}/`,
+                icon: '🌐'
+            }));
 
-                if (sites.length === 0) {
-                    container.innerHTML = '<p class="loading">No sites found.</p>';
-                    return;
-                }
-
-                container.innerHTML = sites.map(s => `
-                    <a href="${s.url}" class="site" target="_blank">
-                        <div class="thumbnail">${s.icon}</div>
-                        <div class="info">
-                            <div class="site-name">${s.name}</div>
-                            ${s.desc ? `<div class="site-desc">${s.desc}</div>` : ''}
-                            <div class="site-url">${s.url}</div>
-                        </div>
-                    </a>
-                `).join('');
-            } catch (e) {
-                container.innerHTML = '<p class="loading">Failed to load sites.</p>';
-            }
+            container.innerHTML = sites.map(s => `
+                <a href="${s.url}" class="site" target="_blank">
+                    <div class="thumbnail">${s.icon}</div>
+                    <div class="info">
+                        <div class="site-name">${s.name}</div>
+                        ${s.desc ? `<div class="site-desc">${s.desc}</div>` : ''}
+                        <div class="site-url">${s.url}</div>
+                    </div>
+                </a>
+            `).join('');
         }
 
         load();
