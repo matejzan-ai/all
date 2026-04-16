@@ -28,7 +28,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#features">Funkcie</a></li>
-      <li><a href="#stack">Tech stack</a></li>
+      <li><a href="#stack">Pre koho</a></li>
       <li><a href="#workflow">Workflow</a></li>
       <li><a href="#pricing">Cena</a></li>
     </ul>
@@ -41,7 +41,7 @@
   <div class="container">
     <div class="hero-badge reveal">
       <span class="pulse-dot"></span>
-      <span>Nová verzia 2.0 — powered by Claude AI</span>
+      <span>Nová verzia 2.0 — podpora zákazníkov s AI asistentom</span>
     </div>
     <h1 class="hero-title">
       <span class="word">Helpdesk,</span>
@@ -51,8 +51,8 @@
       <span class="word">vás.</span>
     </h1>
     <p class="hero-sub reveal">
-      Multi-tenant ticketing systém s AI asistenciou, live chatom, SLA engine a automatizáciami.
-      Postavený na Next.js 15, Drizzle ORM a Claude API.
+      Všetky správy od zákazníkov na jednom mieste — email, chat, portál.
+      AI vám pripraví odpoveď, systém stráži termíny, vy máte konečne poriadok v podpore.
     </p>
     <div class="hero-ctas reveal">
       <a href="#cta" class="btn btn-primary">
@@ -147,8 +147,8 @@
 <section class="ticker-section">
   <div class="ticker">
     <div class="ticker-track">
-      <span>★ Next.js 15</span><span>★ React 19</span><span>★ TypeScript</span><span>★ Drizzle ORM</span><span>★ PostgreSQL</span><span>★ Redis</span><span>★ BullMQ</span><span>★ Auth.js</span><span>★ Claude AI</span><span>★ Tailwind</span><span>★ shadcn/ui</span><span>★ Postmark</span><span>★ Cloudflare R2</span>
-      <span>★ Next.js 15</span><span>★ React 19</span><span>★ TypeScript</span><span>★ Drizzle ORM</span><span>★ PostgreSQL</span><span>★ Redis</span><span>★ BullMQ</span><span>★ Auth.js</span><span>★ Claude AI</span><span>★ Tailwind</span><span>★ shadcn/ui</span><span>★ Postmark</span><span>★ Cloudflare R2</span>
+      <span>★ Menej zmeškaných zákazníkov</span><span>★ Rýchlejšie odpovede</span><span>★ AI pripraví draft</span><span>★ Automatické eskalácie</span><span>★ Stopky na tikety</span><span>★ Vlastný branding</span><span>★ Email + chat + portál</span><span>★ Slovenčina · Čeština · Angličtina · Nemčina</span>
+      <span>★ Menej zmeškaných zákazníkov</span><span>★ Rýchlejšie odpovede</span><span>★ AI pripraví draft</span><span>★ Automatické eskalácie</span><span>★ Stopky na tikety</span><span>★ Vlastný branding</span><span>★ Email + chat + portál</span><span>★ Slovenčina · Čeština · Angličtina · Nemčina</span>
     </div>
   </div>
 </section>
@@ -156,10 +156,10 @@
 <!-- STATS -->
 <section class="stats">
   <div class="container stats-grid">
-    <div class="stat"><div class="stat-num" data-count="20">0</div><div class="stat-lbl">DB tabuliek</div></div>
-    <div class="stat"><div class="stat-num" data-count="4">0</div><div class="stat-lbl">Jazyky (SK/CS/EN/DE)</div></div>
-    <div class="stat"><div class="stat-num" data-count="98" data-suffix="%">0</div><div class="stat-lbl">SLA compliance</div></div>
-    <div class="stat"><div class="stat-num" data-count="50" data-suffix="ms">0</div><div class="stat-lbl">Real-time latency</div></div>
+    <div class="stat"><div class="stat-num" data-count="3" data-suffix="×">0</div><div class="stat-lbl">Rýchlejšie prvé odpovede</div></div>
+    <div class="stat"><div class="stat-num" data-count="60" data-suffix="%">0</div><div class="stat-lbl">Otázok vyrieši zákazník sám</div></div>
+    <div class="stat"><div class="stat-num" data-count="98" data-suffix="%">0</div><div class="stat-lbl">Splnené SLA termíny</div></div>
+    <div class="stat"><div class="stat-num" data-count="4">0</div><div class="stat-lbl">Jazyky systému</div></div>
   </div>
 </section>
 
@@ -175,48 +175,48 @@
     <div class="feature-grid">
       <article class="feature reveal">
         <div class="feature-icon">🤖</div>
-        <h3>AI asistent (Claude)</h3>
-        <p>Automatická kategorizácia, návrhy odpovedí a sumarizácia vlákien. Haiku pre rýchle operácie, Sonnet pre komplexné.</p>
-      </article>
-      <article class="feature reveal">
-        <div class="feature-icon">🏢</div>
-        <h3>Multi-tenancy</h3>
-        <p>Shared databáza s tenant_id a Row-Level Security politikami. Žiadny únik dát medzi klientmi.</p>
+        <h3>AI asistent</h3>
+        <p>Príde nový email? AI mu sám priradí kategóriu a prioritu. Agent otvorí ticket a vidí pripravený návrh odpovede — už ho len upraví a pošle. Pri dlhých vláknach ich AI zhrnie do troch viet.</p>
       </article>
       <article class="feature reveal">
         <div class="feature-icon">💬</div>
-        <h3>Live chat widget</h3>
-        <p>Embeddovateľný widget so Shadow DOM — neovplyvní štýly vášho webu. Agent dashboard v reálnom čase.</p>
-      </article>
-      <article class="feature reveal">
-        <div class="feature-icon">⏱️</div>
-        <h3>SLA engine</h3>
-        <p>Politiky s breach countdownom, eskalácie a notifikácie. Reportovanie compliance v reálnom čase.</p>
-      </article>
-      <article class="feature reveal">
-        <div class="feature-icon">⚡</div>
-        <h3>Automatizácie</h3>
-        <p>Trigger / condition / action pravidlá. Makrá pre opakované akcie. Workflow bez kódu.</p>
-      </article>
-      <article class="feature reveal">
-        <div class="feature-icon">📚</div>
-        <h3>Knowledge base</h3>
-        <p>Full-text vyhľadávanie, kategórie, verejné aj interné články. AI navrhuje relevantné pri tikete.</p>
-      </article>
-      <article class="feature reveal">
-        <div class="feature-icon">📊</div>
-        <h3>Analytika</h3>
-        <p>Resolution time, response time, SLA compliance, trendy podľa agenta, tímu a kategórie.</p>
+        <h3>Chat na vašom webe</h3>
+        <p>Pridajte na web chatovacie okienko — zákazník sa pýta, agent odpovedá. Keď sa konverzácia skomplikuje, jedným klikom z nej spravíte ticket aj s celou históriou rozhovoru.</p>
       </article>
       <article class="feature reveal">
         <div class="feature-icon">📧</div>
-        <h3>Email integrácia</h3>
-        <p>Postmark inbound webhooks, outbound notifikácie, threading. Email-to-ticket out of the box.</p>
+        <h3>Email, ktorý sa neztratí</h3>
+        <p>Zákazník napíše na support@vaša-firma.sk — automaticky sa to zobrazí ako ticket. Keď mu odpoviete z Pultiqu, dostane bežný email. Nikto sa nemusí učiť nový nástroj.</p>
       </article>
       <article class="feature reveal">
-        <div class="feature-icon">🔒</div>
-        <h3>Security first</h3>
-        <p>Rate limiting, XSS sanitizácia, auth middleware, security headers, encrypted attachments cez R2.</p>
+        <div class="feature-icon">⏱️</div>
+        <h3>Strážca termínov (SLA)</h3>
+        <p>Sľúbili ste VIP zákazníkom odpoveď do hodiny? Pri každom tickete vidíte odpočítavanie. Keď to začne horieť, systém sám eskaluje na vedúceho a pošle notifikáciu.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">⚡</div>
+        <h3>Automatizácie a makrá</h3>
+        <p>Ticket obsahuje slovo „refund"? Hoď to finančnému tímu a označ ako urgent. Opakujúce sa odpovede cez makrá klikom. Systém pracuje 24/7, aj keď vy spíte.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">📚</div>
+        <h3>Svojpomoc pre zákazníkov</h3>
+        <p>Napíšte raz článok „Ako zmením fakturačnú adresu" — a 8 z 10 ľudí si odpoveď nájde sám. Menej ticketov pre vás, rýchlejšia pomoc pre nich. Všetci spokojnejší.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">📊</div>
+        <h3>Prehľady pre manažéra</h3>
+        <p>Koľko trvala priemerná odpoveď minulý týždeň? Ktorý agent vyriešil najviac ticketov? Kde najčastejšie horíte v termínoch? Všetko v jednom dashboarde.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">🏢</div>
+        <h3>Vlastný priestor</h3>
+        <p>Vaše logo, vaše farby, vaša doména. Prihlásenie cez firemný účet, vlastný časový formát, jazyk tímu. Vaše dáta sú bezpečne oddelené od ostatných firiem.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">⏲️</div>
+        <h3>Stopky na prácu</h3>
+        <p>Agent pracuje na tickete — stopky bežia. Na konci týždňa viete, kto na čom strávil koľko času. Ideálne pre agentúry, ktoré fakturujú klientom podľa hodín.</p>
       </article>
     </div>
   </div>
@@ -232,45 +232,69 @@
     <div class="steps">
       <div class="step reveal">
         <div class="step-num">01</div>
-        <h3>Príjem</h3>
-        <p>Email, widget, portál alebo API. Všetky kanály v jednom inboxe.</p>
+        <h3>Zákazník píše</h3>
+        <p>Email, chat, portál — všetko sa zbehne na jedno miesto. Žiadne preskakovanie medzi nástrojmi.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">02</div>
-        <h3>AI klasifikácia</h3>
-        <p>Claude priradí kategóriu, prioritu a navrhne riešenie z KB.</p>
+        <h3>AI prevezme</h3>
+        <p>Určí tému, prioritu, nájde podobné vyriešené prípady a pripraví návrh odpovede.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">03</div>
-        <h3>Automatizácia</h3>
-        <p>Pravidlá smerujú ticket správnemu agentovi, spúšťajú SLA.</p>
+        <h3>Systém pracuje</h3>
+        <p>Pravidlá posunú ticket správnemu agentovi a spustia odpočet termínu. Bez klikania.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">04</div>
-        <h3>Vyriešenie</h3>
-        <p>Agent pošle odpoveď, zákazník dostane email, analytika zachytí.</p>
+        <h3>Hotovo</h3>
+        <p>Agent pošle odpoveď, zákazník ju dostane mailom. Vy vidíte, ako dlho to trvalo.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TECH STACK -->
+<!-- AUDIENCE -->
 <section class="section stack-section" id="stack">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">Tech stack</div>
-      <h2>Postavené na tom najlepšom</h2>
-      <p>Moderný stack, ktorý škáluje s vašim tímom.</p>
+      <div class="eyebrow">Pre koho</div>
+      <h2>Pultiq si nájde doma v každom tíme</h2>
+      <p>Nezáleží, či riešite 50 alebo 5 000 správ mesačne — rastie s vami.</p>
     </div>
-    <div class="stack-grid">
-      <div class="stack-card reveal"><div class="stack-emoji">▲</div><h4>Next.js 15</h4><p>App Router, Server Actions, Turbopack</p></div>
-      <div class="stack-card reveal"><div class="stack-emoji">⚛️</div><h4>React 19</h4><p>Server Components, Suspense</p></div>
-      <div class="stack-card reveal"><div class="stack-emoji">🐘</div><h4>PostgreSQL + Drizzle</h4><p>Typed ORM, RLS policies</p></div>
-      <div class="stack-card reveal"><div class="stack-emoji">🔥</div><h4>Redis + BullMQ</h4><p>Background jobs, queues</p></div>
-      <div class="stack-card reveal"><div class="stack-emoji">🧠</div><h4>Claude API</h4><p>Haiku + Sonnet modely</p></div>
-      <div class="stack-card reveal"><div class="stack-emoji">🔐</div><h4>Auth.js v5</h4><p>OAuth, magic links, RBAC</p></div>
-      <div class="stack-card reveal"><div class="stack-emoji">☁️</div><h4>Cloudflare R2</h4><p>Attachments, CDN</p></div>
-      <div class="stack-card reveal"><div class="stack-emoji">🌍</div><h4>next-intl</h4><p>SK · CS · EN · DE</p></div>
+    <div class="stack-grid audience-grid">
+      <div class="stack-card reveal"><div class="stack-emoji">🛍️</div><h4>E-shopy</h4><p>Reklamácie, vratky, otázky k doprave a objednávkam. Všetko previazané s konkrétnym zákazníkom.</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">💻</div><h4>SaaS a softvér</h4><p>Bug reporty, žiadosti o funkcie, technická podpora. Agenti vidia celý kontext od prvej správy.</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">🏢</div><h4>Agentúry a B2B</h4><p>Podpora klientov so zárukami SLA. Stopky strážia čas, faktúra sa píše sama.</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">🏭</div><h4>Interný IT support</h4><p>Helpdesk pre zamestnancov, prihlásenie cez firemný účet, prehľad koho najviac trápi IT.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCENARIOS -->
+<section class="section scenarios-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Ako to vyzerá v praxi</div>
+      <h2>Tri momenty zo života vášho tímu</h2>
+      <p>Takto Pultiq pracuje, kým vy robíte svoju prácu.</p>
+    </div>
+    <div class="scenarios">
+      <article class="scenario reveal">
+        <div class="scenario-time">Pondelok · 9:02</div>
+        <h3>Reklamácia, ktorá sa rieši sama</h3>
+        <p>Zákazník pošle email s reklamáciou objednávky #4812. AI ho okamžite označí ako „fakturácia, urgentné" a priradí finančnému tímu. Agentka Eva otvorí ticket, vidí pripravený návrh odpovede aj celú históriu objednávky. Odpovedá za 90 sekúnd.</p>
+      </article>
+      <article class="scenario reveal">
+        <div class="scenario-time">Utorok · 14:30</div>
+        <h3>Otázka, na ktorú netreba odpovedať</h3>
+        <p>Nový zákazník sa cez chat pýta „Ako zmením fakturačnú adresu?". Agent pošle odkaz na článok z návodov. Zákazník si to vyrieši sám do minúty — bez ticketu, bez čakania, bez stresu pre tím.</p>
+      </article>
+      <article class="scenario reveal">
+        <div class="scenario-time">Streda · 17:45</div>
+        <h3>VIP klient, ktorý nepočká</h3>
+        <p>Dôležitý klient má sľúbenú odpoveď do hodiny. Ticket je otvorený už 40 minút. Na dashboarde svieti červené varovanie, agent to eskaluje vedúcemu. Vedúci dostane notifikáciu na mobil, klient odpoveď do 50 minút. Sľub splnený.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -300,7 +324,7 @@
         <div class="price-num">€29<span>/agent/mes</span></div>
         <ul>
           <li>✓ Neobmedzene ticketov</li>
-          <li>✓ AI asistent (Claude)</li>
+          <li>✓ AI asistent</li>
           <li>✓ SLA + automatizácie</li>
           <li>✓ Analytika + API</li>
           <li>✓ Priority support</li>
