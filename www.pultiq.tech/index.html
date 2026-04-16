@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pultiq — AI-powered helpdesk pre moderné tímy</title>
+<meta name="description" content="Pultiq je multi-tenant helpdesk systém s AI asistenciou, live chatom, SLA a automatizáciami. Postavený na Next.js 15 a Claude AI." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Animated gradient background -->
+<div class="bg-gradient"></div>
+<div class="bg-grid"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M6 8h14a6 6 0 0 1 0 12h-8v6H6V8z" fill="url(#lg1)"/><defs><linearGradient id="lg1" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#38bdf8"/></linearGradient></defs></svg>
+      </span>
+      <span>Pultiq</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Funkcie</a></li>
+      <li><a href="#stack">Tech stack</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#pricing">Cena</a></li>
+    </ul>
+    <a href="#cta" class="btn btn-primary btn-sm">Vyskúšať zdarma</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge reveal">
+      <span class="pulse-dot"></span>
+      <span>Nová verzia 2.0 — powered by Claude AI</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="word">Helpdesk,</span>
+      <span class="word">ktorý</span>
+      <span class="word grad">rozmýšľa</span>
+      <span class="word">za</span>
+      <span class="word">vás.</span>
+    </h1>
+    <p class="hero-sub reveal">
+      Multi-tenant ticketing systém s AI asistenciou, live chatom, SLA engine a automatizáciami.
+      Postavený na Next.js 15, Drizzle ORM a Claude API.
+    </p>
+    <div class="hero-ctas reveal">
+      <a href="#cta" class="btn btn-primary">
+        Začať zdarma
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#demo" class="btn btn-ghost">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="currentColor"/></svg>
+        Pozrieť demo
+      </a>
+    </div>
+
+    <!-- Dashboard mockup -->
+    <div class="hero-visual reveal">
+      <div class="window">
+        <div class="window-bar">
+          <span class="dot red"></span><span class="dot yel"></span><span class="dot grn"></span>
+          <div class="url-pill">app.pultiq.tech/dashboard</div>
+        </div>
+        <div class="window-body">
+          <aside class="mock-side">
+            <div class="mock-logo">P</div>
+            <div class="mock-nav-item active">📥 Inbox <span class="badge">24</span></div>
+            <div class="mock-nav-item">🎫 Tickety</div>
+            <div class="mock-nav-item">💬 Chat</div>
+            <div class="mock-nav-item">📚 KB</div>
+            <div class="mock-nav-item">📊 Analytika</div>
+            <div class="mock-nav-item">⚙️ Nastavenia</div>
+          </aside>
+          <div class="mock-main">
+            <div class="mock-toolbar">
+              <div class="mock-search">🔎 Hľadať tikety...</div>
+              <div class="mock-pill">🤖 AI asistent</div>
+            </div>
+            <div class="mock-ticket urgent">
+              <div class="mock-prio p-high"></div>
+              <div>
+                <div class="mock-subj">Nefunguje prihlásenie cez Google OAuth</div>
+                <div class="mock-meta">#4812 · anna.novakova@acme.com · pred 2 min</div>
+              </div>
+              <div class="mock-tag tag-red">Urgent</div>
+            </div>
+            <div class="mock-ticket">
+              <div class="mock-prio p-med"></div>
+              <div>
+                <div class="mock-subj">Export faktúr do PDF neobsahuje logo</div>
+                <div class="mock-meta">#4811 · support@globex.com · pred 12 min</div>
+              </div>
+              <div class="mock-tag tag-amber">AI: Billing</div>
+            </div>
+            <div class="mock-ticket">
+              <div class="mock-prio p-low"></div>
+              <div>
+                <div class="mock-subj">Žiadosť o zmenu emailu v profile</div>
+                <div class="mock-meta">#4810 · customer@demo.io · pred 31 min</div>
+              </div>
+              <div class="mock-tag tag-green">Vyriešené</div>
+            </div>
+            <div class="mock-ai">
+              <div class="mock-ai-icon">✨</div>
+              <div>
+                <div class="mock-ai-title">Návrh odpovede od Claude</div>
+                <div class="mock-ai-body">Dobrý deň Anna, problém s Google OAuth sme identifikovali — vypršal session token. Reset...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="floating-card fc-1">
+        <div class="fc-icon">🤖</div>
+        <div><strong>AI klasifikácia</strong><span>2.3s priemer</span></div>
+      </div>
+      <div class="floating-card fc-2">
+        <div class="fc-icon green">✓</div>
+        <div><strong>SLA splnené</strong><span>98.4%</span></div>
+      </div>
+      <div class="floating-card fc-3">
+        <div class="fc-icon purple">⚡</div>
+        <div><strong>Real-time SSE</strong><span>&lt; 50ms</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-hint">
+    <span></span>
+    <small>Scrolluj</small>
+  </div>
+</section>
+
+<!-- Logo ticker -->
+<section class="ticker-section">
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>★ Next.js 15</span><span>★ React 19</span><span>★ TypeScript</span><span>★ Drizzle ORM</span><span>★ PostgreSQL</span><span>★ Redis</span><span>★ BullMQ</span><span>★ Auth.js</span><span>★ Claude AI</span><span>★ Tailwind</span><span>★ shadcn/ui</span><span>★ Postmark</span><span>★ Cloudflare R2</span>
+      <span>★ Next.js 15</span><span>★ React 19</span><span>★ TypeScript</span><span>★ Drizzle ORM</span><span>★ PostgreSQL</span><span>★ Redis</span><span>★ BullMQ</span><span>★ Auth.js</span><span>★ Claude AI</span><span>★ Tailwind</span><span>★ shadcn/ui</span><span>★ Postmark</span><span>★ Cloudflare R2</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><div class="stat-num" data-count="20">0</div><div class="stat-lbl">DB tabuliek</div></div>
+    <div class="stat"><div class="stat-num" data-count="4">0</div><div class="stat-lbl">Jazyky (SK/CS/EN/DE)</div></div>
+    <div class="stat"><div class="stat-num" data-count="98" data-suffix="%">0</div><div class="stat-lbl">SLA compliance</div></div>
+    <div class="stat"><div class="stat-num" data-count="50" data-suffix="ms">0</div><div class="stat-lbl">Real-time latency</div></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Funkcie</div>
+      <h2>Všetko, čo moderný support potrebuje</h2>
+      <p>Jeden systém pre tickety, chat, knowledge base, SLA a automatizácie — bez integračného pekla.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature reveal">
+        <div class="feature-icon">🤖</div>
+        <h3>AI asistent (Claude)</h3>
+        <p>Automatická kategorizácia, návrhy odpovedí a sumarizácia vlákien. Haiku pre rýchle operácie, Sonnet pre komplexné.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">🏢</div>
+        <h3>Multi-tenancy</h3>
+        <p>Shared databáza s tenant_id a Row-Level Security politikami. Žiadny únik dát medzi klientmi.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">💬</div>
+        <h3>Live chat widget</h3>
+        <p>Embeddovateľný widget so Shadow DOM — neovplyvní štýly vášho webu. Agent dashboard v reálnom čase.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">⏱️</div>
+        <h3>SLA engine</h3>
+        <p>Politiky s breach countdownom, eskalácie a notifikácie. Reportovanie compliance v reálnom čase.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">⚡</div>
+        <h3>Automatizácie</h3>
+        <p>Trigger / condition / action pravidlá. Makrá pre opakované akcie. Workflow bez kódu.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">📚</div>
+        <h3>Knowledge base</h3>
+        <p>Full-text vyhľadávanie, kategórie, verejné aj interné články. AI navrhuje relevantné pri tikete.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">📊</div>
+        <h3>Analytika</h3>
+        <p>Resolution time, response time, SLA compliance, trendy podľa agenta, tímu a kategórie.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">📧</div>
+        <h3>Email integrácia</h3>
+        <p>Postmark inbound webhooks, outbound notifikácie, threading. Email-to-ticket out of the box.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature-icon">🔒</div>
+        <h3>Security first</h3>
+        <p>Rate limiting, XSS sanitizácia, auth middleware, security headers, encrypted attachments cez R2.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="section workflow" id="workflow">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Workflow</div>
+      <h2>Od ticketu k vyriešeniu za minúty</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Príjem</h3>
+        <p>Email, widget, portál alebo API. Všetky kanály v jednom inboxe.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>AI klasifikácia</h3>
+        <p>Claude priradí kategóriu, prioritu a navrhne riešenie z KB.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Automatizácia</h3>
+        <p>Pravidlá smerujú ticket správnemu agentovi, spúšťajú SLA.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <h3>Vyriešenie</h3>
+        <p>Agent pošle odpoveď, zákazník dostane email, analytika zachytí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="section stack-section" id="stack">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Tech stack</div>
+      <h2>Postavené na tom najlepšom</h2>
+      <p>Moderný stack, ktorý škáluje s vašim tímom.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card reveal"><div class="stack-emoji">▲</div><h4>Next.js 15</h4><p>App Router, Server Actions, Turbopack</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">⚛️</div><h4>React 19</h4><p>Server Components, Suspense</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">🐘</div><h4>PostgreSQL + Drizzle</h4><p>Typed ORM, RLS policies</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">🔥</div><h4>Redis + BullMQ</h4><p>Background jobs, queues</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">🧠</div><h4>Claude API</h4><p>Haiku + Sonnet modely</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">🔐</div><h4>Auth.js v5</h4><p>OAuth, magic links, RBAC</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">☁️</div><h4>Cloudflare R2</h4><p>Attachments, CDN</p></div>
+      <div class="stack-card reveal"><div class="stack-emoji">🌍</div><h4>next-intl</h4><p>SK · CS · EN · DE</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Cenník</div>
+      <h2>Jednoduchá cena, žiadne prekvapenia</h2>
+    </div>
+    <div class="price-grid">
+      <div class="price reveal">
+        <h3>Starter</h3>
+        <div class="price-num">€0<span>/mes</span></div>
+        <ul>
+          <li>✓ 3 agenti</li>
+          <li>✓ 500 ticketov/mes</li>
+          <li>✓ Email + widget</li>
+          <li>✓ Community support</li>
+        </ul>
+        <a href="#cta" class="btn btn-ghost full">Začať</a>
+      </div>
+      <div class="price featured reveal">
+        <div class="badge-top">Najobľúbenejšie</div>
+        <h3>Pro</h3>
+        <div class="price-num">€29<span>/agent/mes</span></div>
+        <ul>
+          <li>✓ Neobmedzene ticketov</li>
+          <li>✓ AI asistent (Claude)</li>
+          <li>✓ SLA + automatizácie</li>
+          <li>✓ Analytika + API</li>
+          <li>✓ Priority support</li>
+        </ul>
+        <a href="#cta" class="btn btn-primary full">Vyskúšať 14 dní zdarma</a>
+      </div>
+      <div class="price reveal">
+        <h3>Enterprise</h3>
+        <div class="price-num">Custom</div>
+        <ul>
+          <li>✓ Self-hosted option</li>
+          <li>✓ SSO / SAML</li>
+          <li>✓ Custom integrácie</li>
+          <li>✓ SLA 99.9%</li>
+          <li>✓ Dedikovaný CSM</li>
+        </ul>
+        <a href="#cta" class="btn btn-ghost full">Kontakt</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2>Pripravený pozdvihnúť váš support?</h2>
+      <p>Spustite Pultiq za 5 minút. Bez kreditnej karty.</p>
+      <form class="cta-form" onsubmit="event.preventDefault(); this.querySelector('button').innerText='✓ Odoslané'">
+        <input type="email" placeholder="vas@email.sk" required />
+        <button class="btn btn-primary" type="submit">Získať prístup</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32"><path d="M6 8h14a6 6 0 0 1 0 12h-8v6H6V8z" fill="url(#lg2)"/><defs><linearGradient id="lg2" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#38bdf8"/></linearGradient></defs></svg></span><span>Pultiq</span></div>
+      <p class="muted">AI-powered helpdesk pre moderné tímy.</p>
+    </div>
+    <div>
+      <h5>Produkt</h5>
+      <a href="#features">Funkcie</a>
+      <a href="#pricing">Cenník</a>
+      <a href="#">Changelog</a>
+    </div>
+    <div>
+      <h5>Firma</h5>
+      <a href="#">O nás</a>
+      <a href="#">Blog</a>
+      <a href="#">Kontakt</a>
+    </div>
+    <div>
+      <h5>Právne</h5>
+      <a href="#">Ochrana súkromia</a>
+      <a href="#">Podmienky</a>
+      <a href="#">GDPR</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Pultiq. Všetky práva vyhradené.</div>
+</footer>
+
+<!-- Libraries: GSAP + Lenis smooth scroll (top-starred GitHub animation libs) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
