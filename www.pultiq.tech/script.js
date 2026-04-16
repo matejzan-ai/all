@@ -99,8 +99,10 @@ if (heroVisual && heroWindow && window.matchMedia('(pointer:fine)').matches) {
   botTrack.innerHTML = botTrack.innerHTML + botTrack.innerHTML;
 
   const AUTO = 0.28;  // slow idle speed (px/frame)
+  const SLOW = 0.05;  // when cursor hovers the cards
   const FAST = 3.2;   // speed while arrow held
   let push = 0;        // 0 idle, +1 right arrow, -1 left arrow
+  let hovering = false;
 
   let topX = 0, botX = 0;
   let topHalf = 0, botHalf = 0;
@@ -119,7 +121,10 @@ if (heroVisual && heroWindow && window.matchMedia('(pointer:fine)').matches) {
     let topV, botV;
     if (push === 1)      { topV = -FAST;  botV =  FAST; }
     else if (push === -1){ topV =  FAST;  botV = -FAST; }
-    else                 { topV = -AUTO;  botV =  AUTO; }
+    else {
+      const s = hovering ? SLOW : AUTO;
+      topV = -s;  botV = s;
+    }
 
     topX += topV;
     botX += botV;
@@ -159,6 +164,13 @@ if (heroVisual && heroWindow && window.matchMedia('(pointer:fine)').matches) {
   }
   bindHold(rightBtn, 1);
   bindHold(leftBtn, -1);
+
+  // Slow down on cursor hover over the cards
+  const tracks = document.querySelector('.scenarios-tracks');
+  if (tracks) {
+    tracks.addEventListener('mouseenter', () => { hovering = true; });
+    tracks.addEventListener('mouseleave', () => { hovering = false; });
+  }
 })();
 
 // Smooth anchor links — native behavior
