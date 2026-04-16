@@ -531,14 +531,11 @@ img,svg{max-width:100%;display:block}
   padding:0 72px;
   overflow:hidden;
 }
-.scenarios-wrap::before,
-.scenarios-wrap::after{
-  content:"";position:absolute;top:0;bottom:0;width:90px;z-index:3;
-  pointer-events:none;
+.scenarios-tracks{
+  display:flex;flex-direction:column;gap:16px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%);
 }
-.scenarios-wrap::before{left:0;background:linear-gradient(90deg,var(--bg) 20%,transparent)}
-.scenarios-wrap::after{right:0;background:linear-gradient(-90deg,var(--bg) 20%,transparent)}
-.scenarios-tracks{display:flex;flex-direction:column;gap:16px;overflow:hidden}
 .scen-track{
   display:flex;gap:16px;width:max-content;
   will-change:transform;
