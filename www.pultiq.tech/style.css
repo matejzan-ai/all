@@ -324,8 +324,31 @@ img,svg{max-width:100%;display:block}
 .section-head p{color:var(--muted);font-size:18px}
 
 /* ========= FEATURES ========= */
-.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media(max-width:900px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
+.feature-cat{margin-bottom:60px}
+.feature-cat:last-child{margin-bottom:0}
+.cat-head{
+  display:flex;align-items:center;gap:18px;
+  padding:20px 24px;margin-bottom:24px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(167,139,250,0.08),rgba(56,189,248,0.04));
+  border:1px solid rgba(167,139,250,0.15);
+}
+.cat-head .cat-icon{
+  font-size:32px;width:56px;height:56px;flex-shrink:0;
+  display:grid;place-items:center;border-radius:12px;
+  background:rgba(167,139,250,0.12);
+  border:1px solid rgba(167,139,250,0.25);
+}
+.cat-head h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:22px;margin-bottom:2px;
+}
+.cat-head p{color:var(--muted);font-size:14px;line-height:1.4}
+@media(max-width:600px){
+  .cat-head{flex-direction:column;text-align:center;gap:10px;padding:18px}
+}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:1100px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.feature-grid{grid-template-columns:1fr}}
 .feature{
   padding:32px;border-radius:var(--radius);
@@ -384,10 +407,11 @@ img,svg{max-width:100%;display:block}
 .stack-card p{color:var(--muted);font-size:13px}
 
 /* ========= AUDIENCE (reused stack-grid) ========= */
-.audience-grid .stack-card{padding:32px 24px;text-align:left}
+.audience-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.audience-grid .stack-card{padding:30px 22px;text-align:left}
 .audience-grid .stack-card p{font-size:14px;line-height:1.55}
-.audience-grid .stack-emoji{font-size:42px;margin-bottom:14px}
-.audience-grid .stack-card h4{font-size:18px;margin-bottom:8px}
+.audience-grid .stack-emoji{font-size:40px;margin-bottom:14px}
+.audience-grid .stack-card h4{font-size:17px;margin-bottom:8px}
 
 /* ========= SCENARIOS ========= */
 .scenarios-section{background:linear-gradient(180deg,transparent,rgba(56,189,248,0.03),transparent)}
