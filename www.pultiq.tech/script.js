@@ -85,6 +85,82 @@ if (heroVisual && heroWindow && window.matchMedia('(pointer:fine)').matches) {
   }
 }
 
+// Scenarios dual marquee — top row auto-scrolls left, bottom row right.
+// Arrows (hold) push both in opposite direction faster.
+(function() {
+  const topTrack = document.querySelector('.scen-track.top');
+  const botTrack = document.querySelector('.scen-track.bottom');
+  const leftBtn = document.querySelector('.scen-arrow.left');
+  const rightBtn = document.querySelector('.scen-arrow.right');
+  if (!topTrack || !botTrack || !leftBtn || !rightBtn) return;
+
+  // Duplicate content once for seamless loop
+  topTrack.innerHTML = topTrack.innerHTML + topTrack.innerHTML;
+  botTrack.innerHTML = botTrack.innerHTML + botTrack.innerHTML;
+
+  const AUTO = 0.28;  // slow idle speed (px/frame)
+  const FAST = 3.2;   // speed while arrow held
+  let push = 0;        // 0 idle, +1 right arrow, -1 left arrow
+
+  let topX = 0, botX = 0;
+  let topHalf = 0, botHalf = 0;
+  let started = false;
+
+  function measure() {
+    topHalf = topTrack.scrollWidth / 2;
+    botHalf = botTrack.scrollWidth / 2;
+    botX = -botHalf; // start mid-doubled-content so right-scroll has content on left
+  }
+
+  function tick() {
+    // Default: top moves left (-), bottom moves right (+). Arrows keep opposite relationship.
+    // Right arrow held → both accelerate in default direction.
+    // Left arrow held → both reverse (top right, bottom left).
+    let topV, botV;
+    if (push === 1)      { topV = -FAST;  botV =  FAST; }
+    else if (push === -1){ topV =  FAST;  botV = -FAST; }
+    else                 { topV = -AUTO;  botV =  AUTO; }
+
+    topX += topV;
+    botX += botV;
+
+    if (topX <= -topHalf) topX += topHalf;
+    else if (topX > 0)     topX -= topHalf;
+
+    if (botX >= 0)               botX -= botHalf;
+    else if (botX < -botHalf)    botX += botHalf;
+
+    topTrack.style.transform = `translate3d(${topX}px,0,0)`;
+    botTrack.style.transform = `translate3d(${botX}px,0,0)`;
+    requestAnimationFrame(tick);
+  }
+
+  function start() {
+    if (started) return;
+    measure();
+    started = true;
+    tick();
+  }
+
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start);
+  window.addEventListener('resize', () => { measure(); });
+
+  function bindHold(el, dir) {
+    const down = (e) => { push = dir; };
+    const up = () => { push = 0; };
+    el.addEventListener('mousedown', down);
+    el.addEventListener('mouseup', up);
+    el.addEventListener('mouseleave', up);
+    el.addEventListener('touchstart', (e) => { e.preventDefault(); down(); }, { passive: false });
+    el.addEventListener('touchend', up);
+    el.addEventListener('touchcancel', up);
+    el.addEventListener('click', (e) => e.preventDefault());
+  }
+  bindHold(rightBtn, 1);
+  bindHold(leftBtn, -1);
+})();
+
 // Smooth anchor links — native behavior
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
