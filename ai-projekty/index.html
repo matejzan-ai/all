@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Projekty — Matej Záň</title>
+    <meta name="description" content="Prehľad AI projektov — Matej Záň.">
+    <meta property="og:title" content="AI Projekty — Matej Záň">
+    <meta property="og:description" content="Prehľad AI projektov — Matej Záň.">
+    <meta property="og:type" content="website">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #1c1c1c;
+        }
+        header h1 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+        .actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-primary {
+            background: #4a9eff;
+            color: #04122a;
+        }
+        .btn-primary:hover { background: #6fb2ff; }
+        .btn-ghost {
+            border: 1px solid #333;
+            color: #cfcfcf;
+        }
+        .btn-ghost:hover { border-color: #555; }
+        .viewer {
+            flex: 1;
+            width: 100%;
+            min-height: 70vh;
+        }
+        .viewer iframe,
+        .viewer embed {
+            width: 100%;
+            height: 100%;
+            min-height: 80vh;
+            border: 0;
+            background: #fff;
+        }
+        footer {
+            padding: 1rem;
+            text-align: center;
+            color: #555;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Projekty — Matej Záň</h1>
+        <div class="actions">
+            <a class="btn btn-primary" href="ai-projekty-matej-zan.pdf" target="_blank" rel="noopener">Otvoriť PDF</a>
+            <a class="btn btn-ghost" href="ai-projekty-matej-zan.pdf" download>Stiahnuť</a>
+        </div>
+    </header>
+
+    <div class="viewer">
+        <iframe src="ai-projekty-matej-zan.pdf" title="AI Projekty — Matej Záň">
+            <p>Váš prehliadač nevie zobraziť PDF priamo.
+            <a href="ai-projekty-matej-zan.pdf">Kliknite sem pre otvorenie PDF</a>.</p>
+        </iframe>
+    </div>
+
+    <footer>
+        Ak sa PDF nezobrazí, použite tlačidlo „Stiahnuť".
+    </footer>
+</body>
+</html>
