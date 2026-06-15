@@ -111,7 +111,8 @@
         const SITES = [
             { name: 'Drzanlabs', desc: 'IT Support & AI Automation', repo: 'drzanlabs' },
             { name: 'Rambala Stolarstvo', desc: 'Premium woodworking business website', repo: 'rambala-stolarstvo' },
-            { name: 'Remote Factory', desc: 'Engineering resources from Slovakia', repo: 'remote-factory' }
+            { name: 'Remote Factory', desc: 'Engineering resources from Slovakia', repo: 'remote-factory' },
+            { name: 'AI Projekty — Matej Záň', desc: 'Prehľad AI projektov (PDF)', url: 'https://matejzan-ai.github.io/all/ai-projekty/' }
         ];
 
         function getScreenshotUrl(siteUrl) {
@@ -123,7 +124,7 @@
             const container = document.getElementById('sites');
 
             container.innerHTML = SITES.map(s => {
-                const url = `https://${OWNER}.github.io/${s.repo}/`;
+                const url = s.url || `https://${OWNER}.github.io/${s.repo}/`;
                 const screenshotUrl = getScreenshotUrl(url);
                 return `
                     <a href="${url}" class="site" target="_blank">
